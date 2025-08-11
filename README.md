@@ -10,3 +10,5 @@ Some variables to be aware of:
 `'{104EA319-6EE2-4701-BD47-8DDBF425BBE5} 2'` is the property key for the Bluetooth battery
 
 `Get-PnpDevice -Class 'Bluetooth'` will list all of your Bluetooth devices. If you only want to monitor a specific device, you can run that command and find the 'FriendlyName' of your specific device and update the command on line 5 with `-FriendlyName '<NAME>'` (without the angle brackets). That method may cause you to run into issues of not finding the device. I got around that by adding a * at the end of the name (EX: 'BTK*').
+
+If you want to change the percentage level, that can be done on line 14 of the script `$batteryLevel -ne $null -and $batteryLevel -lt 25`. The `25` signifies the percentage so if you want to change your alert level, update that integer.
