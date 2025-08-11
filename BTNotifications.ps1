@@ -11,7 +11,7 @@ foreach ($device in $btDevices) {
     $batteryProp = Get-PnpDeviceProperty -InstanceId $device.InstanceId -KeyName $propertyKey -ErrorAction SilentlyContinue
     $batteryLevel = $batteryProp.Data
 
-    if ($batteryLevel -ne $null -and $batteryLevel -lt 90) {
+    if ($batteryLevel -ne $null -and $batteryLevel -lt 25) {
         $lowBatteryDevices += "$($device.FriendlyName): $batteryLevel%"
     }
 }
